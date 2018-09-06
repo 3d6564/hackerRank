@@ -8,6 +8,8 @@ Purpose: Solve New Year Chaos problem. What this problem uses:
                 - Counter for moves per number
                 - Counter for minimum moves
                 - For/if to print out results
+                
+ This solution does not pass all 12 tests.
  */
 public class minBribeSolution {
     // Complete the minimumBribes function below.
