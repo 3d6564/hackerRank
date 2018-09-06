@@ -32,6 +32,7 @@ public class minBribeSolution {
             if(c[i] > 2){
                 System.out.println("Too chaotic");
                 d++;
+                break;
             }
         }
         if(d < 1){
