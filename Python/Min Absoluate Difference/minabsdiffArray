@@ -1,0 +1,34 @@
+#!/bin/python3
+
+# Project: Minimum Absolute Difference in Array
+# This: minabsdiffArray.py
+# Author: C Robinson
+# Date: 07 Sep 2018
+# Purpose: Solve Abs Min Difference problem. What this problem does:
+#                 - Sorts list and stores
+#                 - Iterates through the list for each element in the list. zip() sets each list it iterates through
+#                 - If it is lower than previous abs() it will store, eventually only the minimum is returned
+#   
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the minimumAbsoluteDifference function below.
+def minimumAbsoluteDifference(arr):
+    a = sorted(arr)
+    return (min(abs(i-j) for i,j in zip(a,a[1:])))
+    
+
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input())
+    arr = list(map(int, input().rstrip().split()))
+
+    result = minimumAbsoluteDifference(arr)
+    fptr.write(str(result) + '\n')
+    fptr.close()
