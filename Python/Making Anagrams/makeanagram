@@ -1,0 +1,43 @@
+#!/bin/python3
+
+# Project: Making Anagrams
+# This: makeanagram.py
+# Author: C Robinson
+# Date: 07 Sep 2018
+# Purpose: Solve Make Anagrams problem. What this problem does:
+#                 - Places value into dictionary
+#                 - If item isn't in dic, sets value to zero otherwise sets dictionary value to 1
+#                 - If next item isn't in dic, sets value to zero otherwise it lowers value to zero if present
+#     
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the makeAnagram function below.
+def makeAnagram(a, b):
+    dic = {}
+    for i in a:
+        if i not in dic:
+            dic[i] = 0
+        dic[i] += 1
+    for i in b:
+        if i not in dic:
+            dic[i] = 0
+        dic[i] -= 1
+    return sum(abs(n) for n in dic.values())
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    a = input()
+
+    b = input()
+
+    res = makeAnagram(a, b)
+
+    fptr.write(str(res) + '\n')
+
+    fptr.close()
