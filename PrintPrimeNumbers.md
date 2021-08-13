@@ -1,3 +1,4 @@
+```sql
 /*
 Creator: crobinson89
 Date: 20210812
@@ -44,3 +45,4 @@ BEGIN
 END
 
 PRINT(@output);
+```
