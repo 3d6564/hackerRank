@@ -1,5 +1,10 @@
 from math import comb
-b,g = map(float, input().split())
-p = b / (b + g)
+percent, pistons = map(int, input().split())
+p = percent / 100
 q = 1 - p
-print(round(sum([comb(6,r)*(p**r)*(q**(6-r)) for r in range(3,7,1)]), 3))
+n = pistons
+# No more than 2 rejects
+print(round(sum([comb(n,r)*(p**r)*(q**(n-r)) for r in range(0,3)]), 3))
+# At least 2 rejects
+print(round(sum([comb(n,r)*(p**r)*(q**(n-r)) for r in range(2,n+1)]), 3))
+
